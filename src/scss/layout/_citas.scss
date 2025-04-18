@@ -1,0 +1,40 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.seccion{
+    margin: 2rem 0;
+    display: none;
+    .text-center{
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+}
+
+.mostrar{
+    display: block;
+}
+.ocultar{
+    display: none;
+}
+
+.menu-usuario{
+    text-align: center;
+    margin: 2rem 0;
+    a{
+        display: block;
+        color: v.$blanco;
+        font-weight: v.$bold;
+        text-decoration: underline;
+        font-size: 2rem;
+        margin: 3.5rem 0;
+    }
+    
+    @include m.tablet{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        a{
+            margin: 2rem 0;
+        }
+    }
+}

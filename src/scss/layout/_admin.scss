@@ -1,0 +1,27 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+@use 'sass:color';
+
+.cita{
+    padding: 0;
+    list-style: none;
+    li{
+        border-top: 2px solid v.$gris;
+    }
+    p{
+        color: v.$azul;
+        font-weight: v.$bold;
+    }    
+    span, .servicio{
+        color: v.$blanco;
+        font-weight: v.$delgada;
+    }
+}
+
+.servicios-config{
+    @include m.tablet{
+        display: flex;
+        justify-content: space-around;
+    }
+    @extend .cita;
+}

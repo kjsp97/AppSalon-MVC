@@ -1,0 +1,24 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+
+.campo{
+    display: flex;
+    margin-bottom: 2rem;
+    align-items: center;
+
+    label{
+        flex: 0 0 12rem;
+    }
+    input{
+        padding: 0 2rem;
+        height: 4rem;
+        flex: 1;
+        border: none;
+        border-radius: .5rem;
+        &:disabled{
+            color: v.$blanco;
+            font-weight: v.$bold;
+        }
+    }
+}

@@ -1,0 +1,66 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+@use 'sass:color';
+
+.listado-servicios{
+    @include m.tablet {
+        @include m.grid(2, 1)
+    }
+    .servicio{
+        background-color: v.$blanco;
+        padding: 1.5rem;
+        text-align: center;
+        margin: 1rem;
+        border-radius: 2rem;
+        transition: ease-in 0.5s;
+        cursor: pointer;
+
+        &.opacar{
+            background-color: color.adjust($color: v.$blanco, $lightness: -40%);
+            .precio-servicio{
+                background: linear-gradient(to right, v.$azul, color.adjust($color: v.$azul, $lightness: +30%));
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+            p{
+                color: v.$blanco;
+            }
+        }
+
+        &:hover{
+            scale: 1.08;
+        }
+
+        p{
+            margin: 1rem 0;
+        }
+        .nombre-servicio{
+            color: v.$negro;
+        }
+        .precio-servicio{
+            font-size: 3rem;
+            font-weight: v.$bold;
+            background: linear-gradient(to right, color.adjust($color: v.$azul, $lightness: +30%), v.$azul);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+}
+
+.servicios-listado{
+    h2{
+        border-top: 1px solid v.$gris;
+        padding: 2rem;
+    }
+}
+
+.servicios-config{
+
+    a, input{
+        display: inline-block;
+        margin: 0 0 2rem 0;
+    }
+    
+}

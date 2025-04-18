@@ -1,0 +1,34 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+@use 'sass:color';
+
+.boton{
+    @include m.boton(v.$azul, v.$blanco);
+    
+}
+
+.boton2{
+        
+    flex: 1;
+    background-color: v.$azul;
+    border-radius: 1rem;
+    padding: 2rem;
+    border: none;
+    color: v.$blanco;
+    text-transform: uppercase;
+    font-weight: v.$bold;
+    transition: ease-in 0.3s;
+    cursor: pointer;
+
+    &:hover{
+        background-color: color.adjust($color: v.$azul, $lightness: -15%);
+    }
+    &.opacar{
+        background-color: color.adjust($color: v.$azul, $lightness: -30%);
+        color: color.adjust($color: v.$blanco, $lightness: -30%);
+    }
+}
+
+.boton-eliminar{
+    @include m.boton(v.$rojo, v.$blanco);
+}
