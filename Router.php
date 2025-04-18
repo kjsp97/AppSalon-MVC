@@ -24,7 +24,6 @@ class Router
         // Arreglo de rutas protegidas...
         $rutas_usuario = ['/citas', 'api/servicios', 'api/citas'];
         $rutas_admin = ['/admin', '/servicios', '/servicios/crear', '/servicios/actualizar', '/servicios/eliminar'];
-        echo strtok($_SERVER['REQUEST_URI'], '?');
         $currentUrl = strtok($_SERVER['REQUEST_URI'], '?') ?? '/';
         $method = $_SERVER['REQUEST_METHOD'];
 
